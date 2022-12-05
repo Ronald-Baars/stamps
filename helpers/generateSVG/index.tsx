@@ -47,6 +47,9 @@ const Svg: React.FC<SvgProps> = (props) => {
         <style
           dangerouslySetInnerHTML={{
             __html: `
+            svg, text {
+              font-family: "${settings.fontFamily}", sans-serif;
+            }
             rect:hover {
               filter: brightness(0.8);
             }
