@@ -13,7 +13,7 @@ const defaults: Props = {
   paddingLeft: 16,
   paddingRight: 16,
   borderRadius: 4,
-  backgroundColor: "4A67FB",
+  backgroundColor: "orange",
   color: "white",
 };
 
@@ -47,14 +47,10 @@ const Svg: React.FC<SvgProps> = (props) => {
         <style
           dangerouslySetInnerHTML={{
             __html: `
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
             svg, text {
               font-family: "${settings.fontFamily}", sans-serif;
-            }
-            rect:hover {
-              filter: brightness(0.8);
-            }
-            rect:active {
-              filter: brightness(0.6);
             }
           `,
           }}
