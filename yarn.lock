@@ -387,6 +387,11 @@
     "shebang-command" "^2.0.0"
     "which" "^2.0.1"
 
+"css-color-names@^1.0.1":
+  "integrity" "sha512-/loXYOch1qU1biStIFsHH8SxTmOseh1IJqFvy8IujXOm1h+QjUdDhkzOrR5HG8K8mlxREj0yfi8ewCHx0eMxzA=="
+  "resolved" "https://registry.npmjs.org/css-color-names/-/css-color-names-1.0.1.tgz"
+  "version" "1.0.1"
+
 "csstype@^3.0.2":
   "integrity" "sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw=="
   "resolved" "https://registry.npmjs.org/csstype/-/csstype-3.1.1.tgz"

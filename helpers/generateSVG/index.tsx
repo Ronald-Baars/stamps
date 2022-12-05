@@ -3,17 +3,23 @@ import { useRef } from "react";
 import { renderToString } from "react-dom/server";
 import pixelWidth from "string-pixel-width";
 import { Props, SvgProps } from "./types";
+import colorList from "css-color-names";
 
 const defaults: Props = {
   fontFamily: "helvetica",
   fontSize: 14,
-  paddingTop: 5,
-  paddingBottom: 5,
-  paddingLeft: 10,
-  paddingRight: 10,
+  paddingTop: 8,
+  paddingBottom: 8,
+  paddingLeft: 16,
+  paddingRight: 16,
   borderRadius: 4,
-  backgroundColor: "blue",
+  backgroundColor: "4A67FB",
   color: "white",
+};
+
+const correctColor = (color?: string) => {
+  if (!color) return "red";
+  return colorList.hasOwnProperty(color) ? color : `#${color}`;
 };
 
 const Svg: React.FC<SvgProps> = (props) => {
@@ -35,13 +41,28 @@ const Svg: React.FC<SvgProps> = (props) => {
       viewBox={`0 0 ${width} ${height}`}
       width={width}
       height={height}
+      style={{ cursor: "pointer" }}
     >
+      <defs>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+            rect:hover {
+              filter: brightness(0.8);
+            }
+            rect:active {
+              filter: brightness(0.6);
+            }
+          `,
+          }}
+        />
+      </defs>
       <rect
         x={0}
         y={0}
         width={width}
         height={height}
-        fill={settings.backgroundColor}
+        fill={correctColor(settings.backgroundColor)}
         rx="4"
       />
       <text
@@ -50,10 +71,13 @@ const Svg: React.FC<SvgProps> = (props) => {
         textAnchor="start"
         alignmentBaseline="hanging"
         ref={textRef}
-        fill={settings.color}
+        fill={correctColor(settings.color)}
         style={{
           fontFamily: settings.fontFamily,
           fontSize: settings.fontSize,
+          userSelect: "none",
+          cursor: "inherit",
+          pointerEvents: "none",
         }}
       >
         {settings.text}
