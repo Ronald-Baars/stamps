@@ -1,15 +1,26 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 interface ExampleProps {
   src: string;
   showMD?: boolean;
 }
 const Example: React.FC<ExampleProps> = ({ src, showMD }) => {
-  const path = "" + src;
+  const [path, setPath] = useState<string>();
+  const router = useRouter();
+  const origin =
+    typeof window !== "undefined" && window.location.origin
+      ? window.location.origin
+      : "";
+
+  const address_url = origin + router.asPath;
+
+  useEffect(() => {
+    setPath(address_url + src);
+  }, [address_url, src]);
 
   return (
     <article className={styles.example}>
