@@ -1,6 +1,31 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
+
+import { useRouter } from "next/router";
+
+interface ExampleProps {
+  src: string;
+  showMD?: boolean;
+}
+const Example: React.FC<ExampleProps> = ({ src, showMD }) => {
+  const path = "" + src;
+
+  return (
+    <article className={styles.example}>
+      <div className={styles.left}>
+        <h4>HTML in Markdown</h4>
+        <code className={styles.code}>{`<img src="${path}" />`}</code>
+
+        <h4>Markdown</h4>
+        <code className={styles.code}>{`![Example button](${path})`}</code>
+      </div>
+      <aside className={styles.preview}>
+        <img src={`/${src}`} alt="Example button" />
+      </aside>
+    </article>
+  );
+};
 
 export default function Home() {
   return (
@@ -15,54 +40,21 @@ export default function Home() {
         <h1 className={styles.title}>Github readme buttons</h1>
 
         <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.tsx</code>
+          Use pretty buttons in your github readme files. The buttons are fully
+          customisable by an easy-to-use API.
         </p>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <h1>Basics</h1>
+        <p>
+          The most basic use case. Just choose the text and implement the tag in
+          your MD file. Both of the examples below are usable in your markdown
+          file, and both will give you the same result.
+        </p>
+        <Example src="api/Example" showMD />
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+        <a href="https://www.baars.design/">Made with ♥ by baars.design</a>
       </footer>
     </div>
   );

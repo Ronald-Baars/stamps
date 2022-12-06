@@ -13,7 +13,7 @@ const defaults: Props = {
   paddingLeft: 16,
   paddingRight: 16,
   borderRadius: 4,
-  backgroundColor: "orange",
+  backgroundColor: "3486eb",
   color: "white",
 };
 
@@ -47,10 +47,8 @@ const Svg: React.FC<SvgProps> = (props) => {
         <style
           dangerouslySetInnerHTML={{
             __html: `
-            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
             svg, text {
-              font-family: "${settings.fontFamily}", sans-serif;
+              font-family: "${settings.fontFamily}", helvetica;
             }
           `,
           }}
@@ -72,7 +70,7 @@ const Svg: React.FC<SvgProps> = (props) => {
         ref={textRef}
         fill={correctColor(settings.color)}
         style={{
-          fontFamily: settings.fontFamily,
+          fontFamily: `${settings.fontFamily}, helvetica`,
           fontSize: settings.fontSize,
           userSelect: "none",
           cursor: "inherit",
