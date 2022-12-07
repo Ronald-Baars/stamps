@@ -1,11 +1,10 @@
-/* eslint-disable @next/next/no-page-custom-font */
 import { useRef } from "react";
 import { renderToString } from "react-dom/server";
 import pixelWidth from "string-pixel-width";
-import { Props, SvgProps } from "./types";
+import { allowedFonts, Props, SvgProps } from "./types";
 import colorList from "css-color-names";
 
-const defaults: Props = {
+export const defaults: Props = {
   fontFamily: "helvetica",
   fontSize: 14,
   paddingTop: 8,
@@ -13,8 +12,10 @@ const defaults: Props = {
   paddingLeft: 16,
   paddingRight: 16,
   borderRadius: 4,
-  backgroundColor: "3486eb",
+  backgroundColor: "0794e0",
   color: "white",
+  borderColor: "0b76b0",
+  borderWidth: 0,
 };
 
 const correctColor = (color?: string) => {
@@ -23,9 +24,7 @@ const correctColor = (color?: string) => {
 };
 
 const Svg: React.FC<SvgProps> = (props) => {
-  console.log(props);
   const settings = { ...defaults, ...props };
-  console.log(settings);
   const textRef = useRef<SVGTextElement>(null);
   const textWidth = pixelWidth(`${settings.text}`, {
     font: settings.fontFamily,
@@ -55,12 +54,15 @@ const Svg: React.FC<SvgProps> = (props) => {
         />
       </defs>
       <rect
-        x={0}
-        y={0}
-        width={width}
-        height={height}
+        x={settings.borderWidth / 2}
+        y={settings.borderWidth / 2}
+        width={width - settings.borderWidth}
+        height={height - settings.borderWidth}
         fill={correctColor(settings.backgroundColor)}
-        rx="4"
+        rx={settings.borderRadius - settings.borderWidth / 4}
+        ry={settings.borderRadius - settings.borderWidth / 4}
+        strokeWidth={settings.borderWidth}
+        stroke={correctColor(settings.borderColor)}
       />
       <text
         x={settings.paddingLeft}
