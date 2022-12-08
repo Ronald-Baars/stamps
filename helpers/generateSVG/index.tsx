@@ -16,6 +16,7 @@ export const defaults: Props = {
   color: "white",
   borderColor: "0b76b0",
   borderWidth: 0,
+  padding: 0,
 };
 
 const correctColor = (color?: string) => {
@@ -25,14 +26,23 @@ const correctColor = (color?: string) => {
 
 const Svg: React.FC<SvgProps> = (props) => {
   const settings = { ...defaults, ...props };
+  if (settings.padding) {
+    settings.paddingBottom = Number(settings.padding);
+    settings.paddingTop = Number(settings.padding);
+    settings.paddingRight = Number(settings.padding) + 4;
+    settings.paddingLeft = Number(settings.padding) + 4;
+  }
   const textRef = useRef<SVGTextElement>(null);
   const textWidth = pixelWidth(`${settings.text}`, {
     font: settings.fontFamily,
     size: settings.fontSize,
   });
-  const width = textWidth + settings.paddingLeft + settings.paddingRight;
+  const width =
+    textWidth + Number(settings.paddingLeft) + Number(settings.paddingRight);
   const height =
-    Number(settings.fontSize) + settings.paddingTop + settings.paddingBottom;
+    Number(settings.fontSize) +
+    Number(settings.paddingTop) +
+    Number(settings.paddingBottom);
 
   return (
     <svg

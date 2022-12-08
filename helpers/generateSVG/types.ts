@@ -31,6 +31,7 @@ export interface Props {
   color: CSSProperties["color"];
   borderColor: CSSProperties["borderColor"];
   borderWidth: number;
+  padding: number;
 }
 
 export interface SvgProps extends Partial<Props> {

@@ -180,6 +180,7 @@
   background-color: #ffffff;
   border-radius: 4px;
   flex-direction: column;
+  max-width: calc(100% - 300px);
 }
 .playgroundPreview {
   width: 100%;
@@ -187,11 +188,14 @@
   align-items: center;
   justify-content: center;
   flex: 1;
+  overflow: hidden;
 }
 .playgroundCode {
   width: 100%;
   border-top: 1px solid #dddddd;
   padding: 16px;
+  overflow-wrap: break-word;
+  user-select: all;
 }
 .playgroundSidebar {
   padding: 0 16px;

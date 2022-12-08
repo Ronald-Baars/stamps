@@ -9,7 +9,9 @@ export const Playground: React.FC = () => {
     color: "1d568b",
     fontSize: "14",
     borderWidth: "1",
+    borderRadius: "4",
     borderColor: "90bee9",
+    padding: "20",
   });
   const [text, setText] = useState("Example");
 
@@ -50,6 +52,18 @@ export const Playground: React.FC = () => {
           />
         </label>
         <label>
+          <strong>Border radius:</strong> {settings.borderRadius}px
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value={settings.borderRadius}
+            onChange={(e) =>
+              setSettings({ ...settings, borderRadius: e.target.value })
+            }
+          />
+        </label>
+        <label>
           <strong>Border size:</strong> {settings.borderWidth}px
           <input
             type="range"
@@ -58,6 +72,18 @@ export const Playground: React.FC = () => {
             value={settings.borderWidth}
             onChange={(e) =>
               setSettings({ ...settings, borderWidth: e.target.value })
+            }
+          />
+        </label>
+        <label>
+          <strong>padding:</strong> {settings.padding}px
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value={settings.padding}
+            onChange={(e) =>
+              setSettings({ ...settings, padding: e.target.value })
             }
           />
         </label>
