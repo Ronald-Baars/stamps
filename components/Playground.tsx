@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
+import React from "react";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
-import { domain } from "./Example";
+import { useRouter } from "next/router";
 
 export const Playground: React.FC = () => {
   const [settings, setSettings] = useState({
@@ -13,6 +14,18 @@ export const Playground: React.FC = () => {
     borderColor: "90bee9",
     padding: "10",
   });
+
+  const [domain, setDomain] = React.useState("");
+  const router = useRouter();
+  const origin =
+    typeof window !== "undefined" && window.location.origin
+      ? window.location.origin
+      : "";
+
+  React.useEffect(() => {
+    setDomain(origin + router.asPath + "api/v1/");
+  }, [origin, router.asPath]);
+
   const [text, setText] = useState("Example");
 
   const url = `${domain}${text === "" ? "%20" : text}?${Object.entries(settings)

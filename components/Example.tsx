@@ -1,13 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
+import React from "react";
 import styles from "../styles/Home.module.css";
-
-export const domain = "http://localhost:3000/api/v1/";
+import { useRouter } from "next/router";
 
 interface ExampleProps {
   src: string;
   extensive?: boolean;
 }
 export const Example: React.FC<ExampleProps> = ({ src, extensive }) => {
+  const [domain, setDomain] = React.useState("");
+  const router = useRouter();
+  const origin =
+    typeof window !== "undefined" && window.location.origin
+      ? window.location.origin
+      : "";
+
+  React.useEffect(() => {
+    setDomain(origin + router.asPath + "api/v1/");
+  }, [origin, router.asPath]);
+
   return (
     <section className={styles.example}>
       <div className={styles.left}>
