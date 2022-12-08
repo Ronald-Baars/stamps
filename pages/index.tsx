@@ -149,6 +149,44 @@ export default function Home() {
           <Example src="Example?borderWidth=3&borderColor=58A4B0" />
         </section>
 
+        <section>
+          <h2>
+            <code>
+              <span>?</span>padding<span>=0</span>
+            </code>{" "}
+          </h2>
+          <h2>
+            <code>
+              <span>?</span>paddingTop<span>=4</span>
+            </code>{" "}
+          </h2>
+          <h2>
+            <code>
+              <span>?</span>paddingLeft<span>=8</span>
+            </code>{" "}
+          </h2>
+          <h2>
+            <code>
+              <span>?</span>paddingRight<span>=8</span>
+            </code>{" "}
+          </h2>
+          <h2>
+            <code>
+              <span>?</span>paddingBottom<span>=4</span>
+            </code>{" "}
+          </h2>
+          <p>
+            Change the padding by using these parameters. If the{" "}
+            <code>padding</code> parameter is used, it will overwrite the
+            paddingLeft, paddingTop, paddingBottom and paddingRight parameters.
+          </p>
+          <Example src="Example?padding=20" />
+          <Example src="Example?paddingLeft=40" />
+          <Example src="Example?paddingRight=40" />
+          <Example src="Example?paddingTop=20" />
+          <Example src="Example?paddingBottom=20" />
+        </section>
+
         <h1>Examples</h1>
         <Example src="Example?borderWidth=2&borderColor=2B303A&backgroundColor=white&color=2B303A" />
         <Example src="Example?backgroundColor=BAC1B8&color=2B303A&borderRadius=0&fontSize=20&fontFamily=courier%20new" />

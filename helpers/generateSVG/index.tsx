@@ -76,7 +76,7 @@ const Svg: React.FC<SvgProps> = (props) => {
       />
       <text
         x={settings.paddingLeft}
-        y={settings.paddingTop + 1}
+        y={Number(settings.paddingTop) + 1}
         textAnchor="start"
         alignmentBaseline="hanging"
         ref={textRef}
