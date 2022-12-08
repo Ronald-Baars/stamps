@@ -21,6 +21,7 @@ export const defaults: Props = {
 
 const correctColor = (color?: string) => {
   if (!color) return "red";
+
   return colorList.hasOwnProperty(color) ? color : `#${color}`;
 };
 
