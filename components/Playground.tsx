@@ -11,7 +11,7 @@ export const Playground: React.FC = () => {
     borderWidth: "1",
     borderRadius: "4",
     borderColor: "90bee9",
-    padding: "20",
+    padding: "10",
   });
   const [text, setText] = useState("Example");
 
@@ -79,7 +79,7 @@ export const Playground: React.FC = () => {
           <strong>padding:</strong> {settings.padding}px
           <input
             type="range"
-            min="1"
+            min="0"
             max="100"
             value={settings.padding}
             onChange={(e) =>
