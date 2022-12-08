@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.css";
 import { allowedFonts } from "helpers/generateSVG/types";
 import { Example } from "components/Example";
 import { Playground } from "components/Playground";
+import { Color } from "components/Color";
 
 export default function Home() {
   return (
@@ -166,12 +167,14 @@ export default function Home() {
         <p>
           Accepted values are html named colors and hex values.
           <small>Hex values should be written without the hashtag.</small>
-          <b>Some examples:</b>
+        </p>
+        <h4>Some examples:</h4>
+        <p>
+          Named colors: <Color color="red" />, <Color color="teal" />,{" "}
+          <Color color="orange" />
           <br />
-          Named colors: <code>red</code>, <code>teal</code>, <code>orange</code>
-          <br />
-          Hex colors: <code>C0FFEE</code>, <code>DE1E7E</code>,{" "}
-          <code>BADA55</code>
+          Hex colors: <Color color="C0FFEE" />, <Color color="DE1E7E" />,{" "}
+          <Color color="BADA55" />
         </p>
       </main>
 

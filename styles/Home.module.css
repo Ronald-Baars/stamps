@@ -27,6 +27,18 @@
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
   user-select: all;
+  line-height: 16px;
+}
+
+.main p code .color  {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  margin-right: 4px;
+  border-radius: 4px;
+  box-shadow: 0 0 1px rgba(0,0,0,0.5) inset;
+  position: relative;
+  top: 3px
 }
 
 .main small {

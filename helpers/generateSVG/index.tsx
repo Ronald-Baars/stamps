@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { renderToString } from "react-dom/server";
 import pixelWidth from "string-pixel-width";
-import { allowedFonts, Props, SvgProps } from "./types";
+import { Props, SvgProps } from "./types";
 import colorList from "css-color-names";
 
 export const defaults: Props = {
