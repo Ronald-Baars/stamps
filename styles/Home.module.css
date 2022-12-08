@@ -1,5 +1,6 @@
 .container {
   padding: 0 2rem;
+  width: 100vw;
 }
 
 .main {
@@ -229,22 +230,48 @@
   border: 1px solid #00000033;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
+  .main {
+    margin: 0;
+    max-width: 100%;
+  }
   .grid {
     width: 100%;
     flex-direction: column;
   }
-}
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
+  .description,
+  .main p {
+    width: 100%;
+    max-width: none;
   }
-  .code {
-    background: #111;
+
+}
+@media (max-width: 600px) {
+
+
+  .grid {
+    width: 100%;
+    flex-direction: column;
   }
-  .logo img {
-    filter: invert(1);
+
+  .example {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .example .left {
+    width: 100%;
+    max-width: 100%;
+  }
+  .example .preview {
+    margin: 10px;
+  }
+
+  .playground {
+    display: none;
   }
 }

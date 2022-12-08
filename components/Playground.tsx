@@ -15,7 +15,7 @@ export const Playground: React.FC = () => {
     padding: "10",
   });
 
-  const [domain, setDomain] = React.useState("");
+  const [domain, setDomain] = React.useState<string>();
   const router = useRouter();
   const origin =
     typeof window !== "undefined" && window.location.origin
@@ -38,7 +38,7 @@ export const Playground: React.FC = () => {
     <div className={styles.playground}>
       <div className={styles.playgroundLeft}>
         <div className={styles.playgroundPreview}>
-          <img src={url} alt="Changable preview of a button" />
+          {domain && <img src={url} alt="Changable preview of a button" />}
         </div>
         <code className={styles.playgroundCode}>{url}</code>
       </div>

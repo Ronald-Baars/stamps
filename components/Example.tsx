@@ -8,7 +8,7 @@ interface ExampleProps {
   extensive?: boolean;
 }
 export const Example: React.FC<ExampleProps> = ({ src, extensive }) => {
-  const [domain, setDomain] = React.useState("");
+  const [domain, setDomain] = React.useState<string>();
   const router = useRouter();
   const origin =
     typeof window !== "undefined" && window.location.origin
@@ -72,7 +72,7 @@ export const Example: React.FC<ExampleProps> = ({ src, extensive }) => {
         )}
       </div>
       <aside className={styles.preview}>
-        <img src={`${domain}${src}`} alt="Example button" />
+        {domain && <img src={`${domain}${src}`} alt="Example button" />}
       </aside>
     </section>
   );
