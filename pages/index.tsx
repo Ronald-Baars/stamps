@@ -4,10 +4,9 @@ import styles from "../styles/Home.module.css";
 
 import { allowedFonts } from "helpers/generateSVG/types";
 import { Example } from "components/Example";
-import dynamic from "next/dynamic";
 import { Playground } from "components/Playground";
 
-const Home = () => {
+export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
@@ -167,7 +166,8 @@ const Home = () => {
         <p>
           Accepted values are html named colors and hex values.
           <small>Hex values should be written without the hashtag.</small>
-          <h4>Some examples:</h4>
+          <b>Some examples:</b>
+          <br />
           Named colors: <code>red</code>, <code>teal</code>, <code>orange</code>
           <br />
           Hex colors: <code>C0FFEE</code>, <code>DE1E7E</code>,{" "}
@@ -184,6 +184,3 @@ const Home = () => {
   );
 };
 
-export default dynamic(() => Promise.resolve(Home), {
-  ssr: false,
-});

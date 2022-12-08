@@ -9,7 +9,7 @@ interface ExampleProps {
 }
 export const Example: React.FC<ExampleProps> = ({ src, extensive }) => {
   return (
-    <article className={styles.example}>
+    <section className={styles.example}>
       <div className={styles.left}>
         {extensive ? (
           <>
@@ -63,6 +63,6 @@ export const Example: React.FC<ExampleProps> = ({ src, extensive }) => {
       <aside className={styles.preview}>
         <img src={`${domain}${src}`} alt="Example button" />
       </aside>
-    </article>
+    </section>
   );
 };
