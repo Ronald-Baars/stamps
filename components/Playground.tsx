@@ -2,7 +2,6 @@
 import React from "react";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
-import { useRouter } from "next/router";
 
 export const Playground: React.FC = () => {
   const [settings, setSettings] = useState({
@@ -14,17 +13,7 @@ export const Playground: React.FC = () => {
     borderColor: "90bee9",
     padding: "10",
   });
-
-  const [domain, setDomain] = React.useState<string>();
-  const router = useRouter();
-  const origin =
-    typeof window !== "undefined" && window.location.origin
-      ? window.location.origin
-      : "";
-
-  React.useEffect(() => {
-    setDomain(origin + router.asPath + "api/");
-  }, [origin, router.asPath]);
+  const domain = "https://gh-stamps.vercel.app/api/";
 
   const [text, setText] = useState("Example");
 

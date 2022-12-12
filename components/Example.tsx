@@ -1,23 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import styles from "../styles/Home.module.css";
-import { useRouter } from "next/router";
 
 interface ExampleProps {
   src: string;
   extensive?: boolean;
 }
 export const Example: React.FC<ExampleProps> = ({ src, extensive }) => {
-  const [domain, setDomain] = React.useState<string>();
-  const router = useRouter();
-  const origin =
-    typeof window !== "undefined" && window.location.origin
-      ? window.location.origin
-      : "";
-
-  React.useEffect(() => {
-    setDomain(origin + router.asPath + "api/");
-  }, [origin, router.asPath]);
+  const domain = "https://gh-stamps.vercel.app/api/";
 
   return (
     <section className={styles.example}>

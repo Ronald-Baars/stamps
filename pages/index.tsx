@@ -29,7 +29,10 @@ export default function Home() {
 
         <p>
           <a href="https://baars.design/" rel="noreferrer" target="_blank">
-            <img src="/api/About%20me?backgroundColor=0b76b0" alt="About me" />
+            <img
+              src="https://gh-stamps.vercel.app/api/About%20me?backgroundColor=0b76b0"
+              alt="About me"
+            />
           </a>
           &nbsp;
           <a
@@ -38,7 +41,7 @@ export default function Home() {
             target="_blank"
           >
             <img
-              src="/api/GitHub%20repo?backgroundColor=white&borderWidth=1&color=0b76b0"
+              src="https://gh-stamps.vercel.app/api/GitHub%20repo?backgroundColor=white&borderWidth=1&color=0b76b0"
               alt="Github repo"
             />
           </a>
