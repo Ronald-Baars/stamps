@@ -29,10 +29,7 @@ export default function Home() {
 
         <p>
           <a href="https://baars.design/" rel="noreferrer" target="_blank">
-            <img
-              src="/api/v1/About%20me?backgroundColor=0b76b0"
-              alt="About me"
-            />
+            <img src="/api/About%20me?backgroundColor=0b76b0" alt="About me" />
           </a>
           &nbsp;
           <a
@@ -41,7 +38,7 @@ export default function Home() {
             target="_blank"
           >
             <img
-              src="/api/v1/GitHub%20repo?backgroundColor=white&borderWidth=1&color=0b76b0"
+              src="/api/GitHub%20repo?backgroundColor=white&borderWidth=1&color=0b76b0"
               alt="Github repo"
             />
           </a>

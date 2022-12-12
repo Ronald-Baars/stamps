@@ -23,7 +23,7 @@ export const Playground: React.FC = () => {
       : "";
 
   React.useEffect(() => {
-    setDomain(origin + router.asPath + "api/v1/");
+    setDomain(origin + router.asPath + "api/");
   }, [origin, router.asPath]);
 
   const [text, setText] = useState("Example");

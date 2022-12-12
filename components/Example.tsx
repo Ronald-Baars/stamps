@@ -16,7 +16,7 @@ export const Example: React.FC<ExampleProps> = ({ src, extensive }) => {
       : "";
 
   React.useEffect(() => {
-    setDomain(origin + router.asPath + "api/v1/");
+    setDomain(origin + router.asPath + "api/");
   }, [origin, router.asPath]);
 
   return (
