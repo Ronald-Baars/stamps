@@ -73,13 +73,15 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build && touch out/CNAME && echo \"stamps.js.org\" >> out/CNAME
+        run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./out
+      - name: Add CNAME file
+        run:  touch ./out/CNAME && echo \"stamps.js.org\" >> ./out/CNAME
 
   # Deployment job
   deploy:
