@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && touch out/CNAME && echo \"stamps.js.org\" >> out/CNAME",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
